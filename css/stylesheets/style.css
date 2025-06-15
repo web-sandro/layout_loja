@@ -203,40 +203,35 @@
     border-radius: 50px;
     border: 1px solid #070707;
 } 
-
 .acessibilidade {
       position: relative;
       display: inline-block;
       cursor: pointer;
-    }
-
-    .acessibilidade span {
-      visibility: hidden;
-      width: 120px;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%; /* Posição acima do ícone */
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .acessibilidade:hover span {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .acessibilidade i {
-      font-size: 24px;
-      color: black;
-    }
-
+}
+.acessibilidade span {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Posição acima do ícone */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.acessibilidade:hover span {
+    visibility: visible;
+    opacity: 1;
+}
+.acessibilidade i {
+    font-size: 24px;
+    color: black;
+}
 .header-3 a:hover {
     color: #0f39f3;
 }
@@ -349,6 +344,45 @@
     border: 1px solid #070707;
     background: #ffffff;
     color: #555;
+}
+.carousel-container {
+    position: relative;         
+    max-width: 30%;           
+    height: 300px;           
+    margin: auto;               
+    border-radius: 5px;        
+    overflow: hidden;            
+}
+.carousel-inner {
+display: flex;               
+transition: transform 0.5s ease-in-out; 
+width: 300%;         
+}
+.carousel-item {
+flex: 0 0 100%;
+}
+.carousel-item img {
+width: 100%;
+display: block;
+}
+.carousel-buttons {
+position: absolute;
+top: 50%;                   
+width: 100%;
+display: flex;
+justify-content: space-between;
+transform: translateY(-50%);
+}
+.carousel-buttons button {
+background: rgba(0, 0, 0, 0.5);
+border: none;
+color: white;
+font-size: 24px;
+padding: 10px 20px;
+cursor: pointer;
+}
+.carousel-buttons button:hover {
+background: rgba(0, 0, 0, 0.8);
 }
 .main-2 {
     display: flex;
