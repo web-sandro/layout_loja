@@ -6,21 +6,22 @@
 }
 .header {
     width: 100%;
-    height: 120px;
+    height: 100%;
 }
 .header-1 a {
   color: #ffffff;
 }
 .header-1 {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 35px;
-    padding: 0px;
-    margin: 0px;
-    border-radius: 5px 5px 0px 0px;
     gap: 10px;
+    width: 100%;
+    height: auto;
+    padding: 5px;
     background: #1740f5;
+    border-radius: 5px 5px 0 0;
 }
 .header-1 > div {
     flex: 1 1 100px; /* cresce, encolhe, base de 100px */
@@ -30,6 +31,9 @@
     border-radius: 0 50px;
     border: 2px solid #fff;
     background-color: transparent;
+}
+.header-1 > div:hover {
+    background-color: #547ef0;
 }
 .header-1-1 {
     display: flex;
@@ -128,14 +132,6 @@
 }
 .header-1-7:hover {
     background-color: #547ef0;
-}
-.header-2 {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 45px;
-    margin-top: 5px;
-    gap: 10px;
 }
 .header-2 {
     display: flex;
@@ -245,16 +241,17 @@
         margin: 5px 0;
     }
 }
-.header-3 a:hover {
-    color: #0f39f3;
-}
 .header-3 {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 30px;
     margin-top: 5px;
     gap: 10px;
+}
+.header-3 a:hover {
+    color: #0f39f3;
 }
 .header-3-1 {
     display: flex;
@@ -262,7 +259,6 @@
     align-items: center;
     width: 7%;
     height: 15px;
-    margin-left: 120px;
 }
 .header-3-2 {
     display: flex;
@@ -270,7 +266,6 @@
     align-items: center;
     width: 7%;
     height: 15px;
-    margin: 0px;
     padding: 0px;
 }           
 .header-3-3 {
@@ -279,7 +274,6 @@
     align-items: center;
     width: 7%;
     height: 15px;
-    margin: 0px;
     padding: 0px;
 }
 .header-3-4 {
@@ -288,7 +282,6 @@
     align-items: center;
     width: 7%;
     height: 15px;
-    margin: 0px;
     padding: 0px;
 }
 .header-3-5 {
@@ -297,7 +290,6 @@
     align-items: center;
     width: 7%;
     height: 15px;
-    margin: 0px;
     padding: 0px;
 }
 .header-3-6 {
@@ -306,7 +298,6 @@
     align-items: center;
     width: 7%;
     height: 15px;
-    margin: 0px;
     padding: 0px;
 }
 .header-3-7 {
@@ -315,7 +306,6 @@
     align-items: center;
     width: 7%;
     height: 15px;
-    margin: 0px;
     padding: 0px;
 }
 .header-3-8 {
@@ -324,7 +314,6 @@
     align-items: center;
     width: 7%;
     height: 15px;
-    margin: 0px;
     padding: 0px;
 }   
 .header-3-9 {
@@ -333,7 +322,6 @@
     align-items: center;
     width: 7%;
     height: 15px;
-    margin: 0px;
     padding: 0px;
 }
 .main {
@@ -347,56 +335,76 @@
     background: #e0f7fa;
     margin: auto;
 }
-.main-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 300px;
-    margin-bottom: 0px;
-    border: 1px solid #070707;
-    background: #ffffff;
-    color: #555;
+.main-1 { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 0px;
+  border: 1px solid #070707;
+  background: #ffffff;
+  color: #555;
 }
+
+/* Estilo do container externo do carrossel */
 .carousel-container {
-    position: relative;         
-    max-width: 30%;           
-    height: 300px;           
-    margin: auto;               
-    border-radius: 5px;        
-    overflow: hidden;            
+  position: relative;
+  width: 30%;
+  height: 100%;
+  margin: auto;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #070707;
 }
+
+/* Container das imagens; usa flexbox para organizar horizontalmente */
 .carousel-inner {
-display: flex;               
-transition: transform 0.5s ease-in-out; 
-width: 300%;         
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
 }
+
+/* Cada item ocupa 100% da largura do container externo */
 .carousel-item {
-flex: 0 0 100%;
+  flex: 1 0 100%;
+  height: 100%;
 }
+
+/* Imagem dentro do item do carrossel */
 .carousel-item img {
-width: 100%;
-display: block;
+  width: 23%;
+  height: 100%;
+  object-fit: cover; /* Preenche o espaço mantendo proporção e recortando se necessário */
+  display: block;
 }
+
+/* Botões ⟨ e ⟩ */
 .carousel-buttons {
-position: absolute;
-top: 50%;                   
-width: 100%;
-display: flex;
-justify-content: space-between;
-transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
 }
+
+/* Estilo dos botões */
 .carousel-buttons button {
-background: rgba(0, 0, 0, 0.5);
-border: none;
-color: white;
-font-size: 24px;
-padding: 10px 20px;
-cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
+
+/* Hover nos botões */
 .carousel-buttons button:hover {
-background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
 }
+
 .main-2 {
     display: flex;
     justify-content: center;
